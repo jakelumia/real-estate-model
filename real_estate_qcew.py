@@ -3,42 +3,80 @@
 # ============================================================
 import pandas as pd
 import numpy as np
-import requests
 import io
 
-# Industry 10 = all industries. This file has every MSA and county in the US.
 BASE_URL = "https://data.bls.gov/cew/data/api/{year}/a/industry/10.csv"
-YEAR = "2023"
+YEARS = ["2021", "2022", "2023", "2024"]
+BLS_DATA_DIR = "bls_qcew"  # folder where you saved the downloaded CSVs
 
 
 # ============================================================
-# CELL 2 — Fetch data and filter to MSA level
+# CELL 2 — Load all years from local files and filter to MSA level
 # ============================================================
-url = BASE_URL.format(year=YEAR)
-print(f"Fetching: {url}")
+frames = []
 
-resp = requests.get(url, timeout=60)
-resp.raise_for_status()
+for year in YEARS:
+    path = f"{BLS_DATA_DIR}/10_{year}.csv"
+    print(f"Loading {path}...")
+    df = pd.read_csv(path, dtype={"area_fips": str}, low_memory=False)
 
-# dtype str on area_fips prevents FIPS codes from being read as integers
-df = pd.read_csv(io.StringIO(resp.text), dtype={"area_fips": str}, low_memory=False)
+    # agglvl_code 40 = MSA total covered, own_code 0 = all ownership types
+    df_msa = df[
+        (df["agglvl_code"] == 40) &
+        (df["own_code"] == 0)
+    ][["area_fips", "annual_avg_emplvl"]].copy()
 
-# agglvl_code 40 = MSA total covered
-# own_code 0    = all ownership types combined
-df_msa = df[
-    (df["agglvl_code"] == 40) &
-    (df["own_code"] == 0)
-].copy()
+    df_msa = df_msa.rename(columns={"annual_avg_emplvl": f"emp_{year}"})
+    frames.append(df_msa)
 
-print(f"Found {len(df_msa)} MSAs")
+# Merge all years on area_fips
+df_all = frames[0]
+for frame in frames[1:]:
+    df_all = df_all.merge(frame, on="area_fips", how="inner")
+
+print(f"\nMSAs with data across all years: {len(df_all)}")
 
 
 # ============================================================
-# CELL 3 — Add MSA names, score, and rank
+# CELL 3 — Calculate year-over-year growth for each period
 # ============================================================
+# Calculate YoY growth rate for each consecutive year pair
+year_pairs = list(zip(YEARS[:-1], YEARS[1:]))
 
-# Read the area titles lookup file you saved to your project folder.
-# Download from: https://www.bls.gov/cew/classifications/areas/area-titles-csv.csv
+for yr_from, yr_to in year_pairs:
+    col_name = f"growth_{yr_from}_{yr_to}"
+    df_all[col_name] = (
+        (df_all[f"emp_{yr_to}"] - df_all[f"emp_{yr_from}"]) /
+        df_all[f"emp_{yr_from}"] * 100
+    ).round(2)
+
+# Latest growth period (most recent year pair)
+latest_from, latest_to = year_pairs[-1]
+latest_growth_col = f"growth_{latest_from}_{latest_to}"
+
+# Prior growth period
+prior_from, prior_to = year_pairs[-2]
+prior_growth_col = f"growth_{prior_from}_{prior_to}"
+
+# Trend direction: compare latest period to prior period
+def classify_trend(row):
+    diff = row[latest_growth_col] - row[prior_growth_col]
+    if diff >= 1.0:
+        return "accelerating"
+    elif diff <= -1.0:
+        return "decelerating"
+    else:
+        return "stable"
+
+df_all["trend"] = df_all.apply(classify_trend, axis=1)
+
+print("Trend distribution:")
+print(df_all["trend"].value_counts())
+
+
+# ============================================================
+# CELL 4 — Add MSA names, score, and rank
+# ============================================================
 area_titles = pd.read_csv(
     "area-titles-csv.csv",
     header=None,
@@ -46,43 +84,39 @@ area_titles = pd.read_csv(
     dtype={"area_fips": str}
 )
 
-# Join names onto MSA data
-df_msa = df_msa.merge(area_titles, on="area_fips", how="left")
+df_all = df_all.merge(area_titles, on="area_fips", how="left")
 
-# Rename the BLS over-the-year column to something readable
-df_msa = df_msa.rename(columns={
-    "oty_annual_avg_emplvl_pct_chg": "yoy_growth_pct",
-    "annual_avg_emplvl": "avg_employment"
-})
-
-# Drop any rows with missing growth data (some MSAs are suppressed by BLS)
-df_msa = df_msa.dropna(subset=["yoy_growth_pct", "avg_employment"])
-
-# Composite score: growth rate weighted by log of employment size.
-# Log scale means a 200k-job MSA outweighs a 5k-job MSA, but not by
-# the full 40x — prevents giant metros from drowning out mid-size markets.
-df_msa["size_weight"] = np.log(df_msa["avg_employment"])
-df_msa["composite_score"] = (
-    df_msa["yoy_growth_pct"] * df_msa["size_weight"]
+# Composite score based on latest growth period, weighted by employment size
+df_all["size_weight"] = np.log(df_all[f"emp_{YEARS[-1]}"])
+df_all["composite_score"] = (
+    df_all[latest_growth_col] * df_all["size_weight"]
 ).round(2)
 
 # Build final ranked table
+growth_cols = [f"growth_{a}_{b}" for a, b in year_pairs]
+
 df_ranked = (
-    df_msa[[
+    df_all[[
         "area_fips",
         "area_title",
-        "avg_employment",
-        "yoy_growth_pct",
+        f"emp_{YEARS[-1]}",
+        *growth_cols,
+        "trend",
         "composite_score"
     ]]
     .sort_values("composite_score", ascending=False)
     .reset_index(drop=True)
 )
-df_ranked.index += 1  # rank starts at 1
+df_ranked.index += 1
 
-print(f"\nTop 20 MSAs by size-adjusted employment growth ({int(YEAR)-1}→{YEAR})\n")
+print(f"\nTop 20 MSAs by size-adjusted employment growth (latest: {latest_from}→{latest_to})\n")
 print(df_ranked.head(20).to_string())
 
-# Save for use in later notebooks (IRS migration join, scoring model, etc.)
+# Save output
 df_ranked.to_csv("qcew_msa_employment_growth.csv", index=False)
+
+# Save sample for GitHub
+df_ranked.head(50).to_csv("samples/qcew_msa_sample.csv", index=False)
+
 print("\nSaved to qcew_msa_employment_growth.csv")
+print("Saved sample to samples/qcew_msa_sample.csv")

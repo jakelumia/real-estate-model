@@ -1,0 +1,51 @@
+area_fips,area_title,emp_2024,growth_2021_2022,growth_2022_2023,growth_2023_2024,trend,composite_score
+C3242,"Mayaguez, PR MSA",56306,5.21,1.92,64.26,accelerating,702.91
+C1210,"Atlantic City-Hammonton, NJ MSA",167870,5.09,0.97,34.81,accelerating,418.8
+C4890,"Wilmington, NC MSA",186436,5.14,3.6,30.15,accelerating,365.9
+C3174,"Manhattan, KS MSA",52936,3.91,3.01,32.45,accelerating,352.95
+C2718,"Jackson, TN MSA",83872,2.49,0.97,21.8,accelerating,247.15
+C3098,"Longview, TX MSA",117273,3.92,2.01,21.07,accelerating,245.93
+C1346,"Bend, OR MSA",108432,3.5,3.87,17.76,accelerating,205.91
+C2342,"Fresno, CA MSA",483934,5.01,1.55,15.63,accelerating,204.59
+C1118,"Ames, IA MSA",56479,3.24,1.98,18.42,accelerating,201.54
+C3374,"Monroe, LA MSA",87283,3.17,0.78,17.14,accelerating,195.0
+C2910,"La Crosse-Onalaska, WI-MN MSA",83269,1.49,0.52,12.61,accelerating,142.87
+C2934,"Lake Charles, LA MSA",100678,-0.66,-0.86,9.5,accelerating,109.44
+C1222,"Auburn-Opelika, AL MSA",71470,4.44,5.42,9.34,accelerating,104.39
+C3118,"Lubbock, TX MSA",165668,2.94,2.1,8.64,accelerating,103.83
+C2790,"Joplin, MO-KS MSA",86371,2.3,1.25,8.15,accelerating,92.64
+C2658,"Huntington-Ashland, WV-KY-OH MSA",138251,1.94,2.14,7.67,accelerating,90.79
+C3598,"Norwich-New London-Willimantic, CT MSA",127106,4.04,2.17,7.71,accelerating,90.61
+C2714,"Jackson, MS MSA",273331,1.84,1.37,7.21,accelerating,90.26
+C1786,"Columbia, MO MSA",105967,2.26,2.13,7.63,accelerating,88.29
+C2354,"Gainesville, FL MSA",151990,2.23,2.12,6.83,accelerating,81.49
+C3990,"Reno, NV MSA",273607,4.83,1.99,6.07,accelerating,75.99
+C2518,"Hagerstown-Martinsburg, MD-WV MSA",105718,1.02,1.54,5.9,accelerating,68.25
+C1730,"Clarksville, TN-KY MSA",101927,3.88,2.83,5.36,accelerating,61.81
+C1978,"Des Moines-West Des Moines, IA MSA",404187,3.53,2.95,4.54,accelerating,58.61
+C4410,"Springfield, IL MSA",136149,2.26,0.37,4.69,accelerating,55.44
+C4362,"Sioux Falls, SD-MN MSA",175666,3.74,2.79,4.54,accelerating,54.83
+C4738,"Waco, TX MSA",129701,3.29,0.41,4.63,accelerating,54.51
+C3746,"Panama City-Panama City Beach, FL MSA",88863,2.7,3.33,4.68,accelerating,53.33
+C1374,"Billings, MT MSA",93802,3.62,1.45,4.34,accelerating,49.69
+C3946,"Punta Gorda, FL MSA",56024,5.05,3.82,4.42,stable,48.33
+C3830,"Pittsburgh, PA MSA",1104744,1.43,0.72,3.41,accelerating,47.45
+C2506,"Gulfport-Biloxi, MS MSA",159517,1.64,1.97,3.88,accelerating,46.48
+C2434,"Grand Rapids-Wyoming-Kentwood, MI MSA",595480,4.52,2.46,3.43,stable,45.61
+C3494,"Naples-Marco Island, FL MSA",171813,5.32,3.86,3.56,stable,42.91
+C3114,"Louisville/Jefferson County, KY-IN MSA",682597,3.28,1.7,3.12,accelerating,41.91
+C4110,"St. George, UT MSA",86508,4.92,4.43,3.68,stable,41.83
+C1314,"Beaumont-Port Arthur, TX MSA",161416,4.23,1.88,3.23,accelerating,38.73
+C2238,"Flagstaff, AZ MSA",65975,4.32,2.9,3.41,stable,37.84
+C3326,"Midland, TX MSA",120666,10.12,6.69,3.13,decelerating,36.62
+C4622,"Tuscaloosa, AL MSA",107354,3.57,3.93,3.15,stable,36.49
+C3354,"Missoula, MT MSA",66876,2.73,3.03,3.22,stable,35.78
+C1164,"Arecibo, PR MSA",40566,4.4,4.37,3.29,decelerating,34.91
+C2982,"Las Vegas-Henderson-North Las Vegas, NV MSA",1124772,9.58,3.92,2.42,decelerating,33.72
+C1526,"Brunswick-St. Simons, GA MSA",46801,4.83,3.58,3.11,stable,33.44
+C1294,"Baton Rouge, LA MSA",403091,3.4,1.75,2.59,stable,33.43
+C1426,"Boise City, ID MSA",386540,4.71,2.4,2.55,stable,32.81
+C3806,"Phoenix-Mesa-Chandler, AZ MSA",2358332,4.24,3.03,2.2,stable,32.28
+C1930,"Daphne-Fairhope-Foley, AL MSA",85118,4.48,3.49,2.84,stable,32.24
+C1670,"Charleston-North Charleston, SC MSA",386863,5.61,3.89,2.48,decelerating,31.91
+C2134,"El Paso, TX MSA",335190,3.84,2.37,2.47,stable,31.42
