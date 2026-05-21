@@ -1,0 +1,51 @@
+MSA Code,MSA Title,net_migration_rate_2020_2021,net_migration_rate_2021_2022,net_migration_rate_2022_2023,avg_net_migration_rate,avg_inflow_agi_2020_2021,avg_inflow_agi_2021_2022,avg_inflow_agi_2022_2023,avg_inflow_agi,migration_trend
+C4554,"The Villages, FL MSA",51.99,52.25,37.6,47.28,96.9,121.4,106.0,108.1,decelerating
+C3482,"Myrtle Beach-Conway-North Myrtle Beach, SC-NC MSA",45.12,45.14,41.0,43.75,85.0,94.0,90.1,89.7,decelerating
+C2614,"Homosassa Springs, FL MSA",39.88,40.23,34.49,38.2,62.9,70.4,70.6,68.0,decelerating
+C3610,"Ocala, FL MSA",34.78,40.3,37.48,37.52,60.0,70.5,65.8,65.4,decelerating
+C2760,"Jefferson, GA MicroSA",31.82,34.01,40.26,35.36,69.1,86.8,77.3,77.7,accelerating
+C2946,"Lakeland-Winter Haven, FL MSA",36.64,37.91,29.66,34.74,52.1,56.1,56.7,55.0,decelerating
+C1890,"Crossville, TN MicroSA",36.31,39.97,26.22,34.17,67.6,77.1,74.2,73.0,decelerating
+C1930,"Daphne-Fairhope-Foley, AL MSA",33.2,34.53,26.3,31.34,85.0,92.6,84.8,87.5,decelerating
+C2462,"Greeneville, TN MicroSA",33.3,31.3,27.74,30.78,55.5,61.7,66.6,61.3,decelerating
+C3946,"Punta Gorda, FL MSA",38.09,33.61,19.98,30.56,83.1,118.2,97.2,99.5,decelerating
+C4394,"Spearfish, SD MicroSA",23.94,36.75,30.9,30.53,104.0,106.7,93.3,101.3,decelerating
+C1966,"Deltona-Daytona Beach-Ormond Beach, FL MSA",33.81,33.89,23.79,30.5,76.8,84.4,77.5,79.6,decelerating
+C3894,"Port St. Lucie, FL MSA",33.32,33.12,25.06,30.5,99.4,116.8,95.6,103.9,decelerating
+C4390,"Spartanburg, SC MSA",26.59,35.0,29.4,30.33,55.1,58.8,61.4,58.4,decelerating
+C4176,"Sandpoint, ID MicroSA",39.49,31.18,19.46,30.04,94.1,106.9,93.4,98.1,decelerating
+C3546,"Newport, TN MicroSA",27.18,36.76,25.5,29.81,47.2,48.0,46.8,47.3,decelerating
+C4270,"Sebring, FL MSA",34.7,34.27,20.27,29.75,52.8,62.5,56.5,57.3,decelerating
+C1062,"Albemarle, NC MicroSA",29.92,27.83,30.09,29.28,53.3,63.9,64.8,60.7,accelerating
+C2942,"Lake Havasu City-Kingman, AZ MSA",34.1,28.57,25.14,29.27,63.1,76.7,68.2,69.3,decelerating
+C3734,"Palm Bay-Melbourne-Titusville, FL MSA",30.25,32.45,24.78,29.16,76.4,87.4,81.1,81.6,decelerating
+C3028,"Lewisburg, TN MicroSA",25.54,28.37,31.87,28.59,56.4,86.7,61.4,68.2,accelerating
+C2998,"Lawrenceburg, TN MicroSA",31.02,29.59,22.74,27.78,62.3,54.1,52.4,56.3,decelerating
+C4154,"Salisbury, MD-DE MSA",32.13,27.76,22.61,27.5,97.8,106.9,94.2,99.6,decelerating
+C4110,"St. George, UT MSA",34.9,25.09,22.41,27.47,87.7,115.6,82.8,95.4,decelerating
+C3722,"Pahrump, NV MicroSA",35.01,27.95,19.16,27.37,63.8,69.2,63.6,65.5,decelerating
+C3926,"Prineville, OR MicroSA",30.89,28.42,22.49,27.27,76.1,90.7,82.4,83.1,decelerating
+C2806,"Kalispell, MT MicroSA",35.98,26.02,19.48,27.16,95.6,125.6,91.5,104.2,decelerating
+C1898,"Cullman, AL MicroSA",30.83,26.84,23.81,27.16,58.9,65.2,62.6,62.2,decelerating
+C3584,"North Port-Sarasota-Bradenton, FL MSA",35.24,28.55,17.6,27.13,140.3,163.3,131.8,145.1,decelerating
+C3746,"Panama City, FL MSA",26.41,26.9,27.8,27.04,65.1,78.7,77.5,73.8,stable
+C4268,"Sebastian-Vero Beach, FL MSA",33.18,30.91,16.06,26.72,170.9,177.7,134.4,161.0,decelerating
+C3266,"McMinnville, TN MicroSA",27.45,27.79,23.87,26.37,43.5,51.8,62.2,52.5,decelerating
+C1194,"Athens, TN MicroSA",29.24,23.79,23.99,25.67,49.1,52.4,53.3,51.6,stable
+C3914,"Prescott, AZ MSA",29.71,26.55,20.22,25.49,86.5,90.5,89.7,88.9,decelerating
+C1158,"Arcadia, FL MicroSA",26.74,32.0,17.62,25.45,46.0,54.1,53.5,51.2,decelerating
+C4330,"Sherman-Denison, TX MSA",27.97,26.42,20.5,24.96,69.3,77.3,78.4,75.0,decelerating
+C3426,"Mountain Home, AR MicroSA",26.9,31.09,16.39,24.79,52.7,64.5,55.9,57.7,decelerating
+C3726,"Palatka, FL MicroSA",26.27,21.52,25.59,24.46,46.7,51.2,55.1,51.0,accelerating
+C1598,"Cape Coral-Fort Myers, FL MSA",39.61,25.66,8.03,24.43,122.7,152.5,123.8,133.0,decelerating
+C1846,"Cornelia, GA MicroSA",29.11,25.16,18.78,24.35,64.3,60.5,62.8,62.5,decelerating
+C4558,"Thomaston, GA MicroSA",25.52,25.17,18.47,23.05,47.1,44.6,47.1,46.3,decelerating
+C1750,"Clewiston, FL MicroSA",17.47,26.4,23.81,22.56,45.3,51.2,49.9,48.8,decelerating
+C2046,"Durant, OK MicroSA",21.6,26.29,19.33,22.41,55.4,51.8,48.6,51.9,decelerating
+C3394,"Montrose, CO MicroSA",26.55,21.38,18.5,22.14,68.5,74.3,70.3,71.0,decelerating
+C1198,"Athens, TX MicroSA",22.44,23.97,19.76,22.06,66.3,69.0,78.1,71.1,decelerating
+C3410,"Morristown, TN MSA",20.22,25.25,20.58,22.02,52.7,62.7,59.0,58.1,decelerating
+C4574,"Toccoa, GA MicroSA",19.37,23.76,22.93,22.02,55.4,57.6,56.6,56.5,stable
+C1862,"Corsicana, TX MicroSA",22.73,25.34,17.47,21.85,57.3,63.9,61.4,60.9,decelerating
+C4326,"Sheridan, WY MicroSA",25.12,20.73,19.47,21.77,85.9,119.7,83.7,96.4,decelerating
+C2258,"Forest City, NC MicroSA",20.26,28.04,16.98,21.76,54.6,65.4,56.4,58.8,decelerating
